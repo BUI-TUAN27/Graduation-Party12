@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -107,12 +107,12 @@
         function openPrizeBox() {
             document.getElementById('prize-box').style.display = 'block';
             setTimeout(() => {
-                const prizes = ["Anh Tuấn", "Kẹo mút"];
+                const prizes = ["kẹo mút", "kẹo mút", "kẹo mút.", "kẹo mút."];];
                 const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
                 document.getElementById('prize-result').innerText = `Bạn nhận được: ${randomPrize}`;
                 
                 // Nếu phần thưởng là "Anh Tuấn", yêu cầu xác nhận
-                if (randomPrize === "Anh Tuấn") {
+                if (randomPrize === "kẹo mút.") {
                     document.getElementById('confirm-box').style.display = 'block';
                 }
             }, 2000);
@@ -141,7 +141,7 @@
     
     <div id="invitation-card" class="card">
         <h1>🎓 Graduation Party Invitation 🎓</h1>
-        <h2>Bùi Trọng Tuấn</h2>
+        <h2>Nguyễn Sỹ Sáng</h2>
         <p class="date">📅 Thời gian: 09:00 - Ngày 06/04/2025</p>
         <p class="date">📍 Địa điểm: Trường THPT Đô Lương 2</p>
         <p><em>Mong bức ảnh thanh xuân của mình có sự góp mặt của bạn!</em></p>
@@ -156,8 +156,8 @@
     
     <!-- Confirmation box for Anh Tuấn -->
     <div id="confirm-box" style="display:none; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">
-        <h3>🎉 Bạn nhận phần thưởng "Anh Tuấn"! 🎉</h3>
-        <p>Bạn có muốn nhận phần thưởng và đến trang Facebook không?</p>
+        <h3>🎉 Bạn nhận phần thưởng "Kẹo mút chứ "! 🎉</h3>
+        <p>Bạn có muốn nhận phần thưởng không?</p>
         <button class="btn" onclick="confirmPrize()">✅ Xác nhận</button>
         <button class="btn" onclick="closePrizeBox()">❌ Hủy</button>
     </div>
