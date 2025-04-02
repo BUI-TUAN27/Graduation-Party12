@@ -88,12 +88,15 @@
         }
     </style>
     <script>
-        // Get name from URL and decode it
         function getNameFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
-            const name = urlParams.get('NAME') || "Khách mời";  // Default to "Khách mời" if no name is provided
-            return decodeURIComponent(name);  // Decode the name to ensure special characters are displayed correctly
+            return urlParams.get('name') || "Khách mời";  // Nếu không có tham số name trong URL, hiển thị "Khách mời"
         }
+
+        window.onload = function() {
+            const guestName = getNameFromURL();
+            document.getElementById('guest-name').innerText = guestName; // Cập nhật tên khách mời
+        };
 
         function openInvitation() {
             let letter = document.getElementById('letter');
@@ -132,12 +135,6 @@
         function closePrizeBox() {
             document.getElementById('prize-box').style.display = 'none';
         }
-
-        // Set the guest name in the invitation dynamically when the page loads
-        window.onload = function() {
-            const guestName = getNameFromURL();
-            document.getElementById('guest-name').innerText = guestName;
-        };
     </script>
 </head>
 <body>
@@ -148,7 +145,7 @@
     </div>
     
     <audio id="bg-music" loop>
-        <source src="https://raw.githubusercontent.com/BUI-TUAN27/kiyeu/main/nhac/Wxrdie%20-%20M%E1%BB%9CI%20EM%20(ft.%20Mcee%20Blue)%20%5Bprod.%20by%20Machiot%2C%20Marlykid%5D.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/BUI-TUAN27/kiyeu/main/nhac/Wxrdie%20-%20M%E1%BB%9AI%20EM%20(ft.%20Mcee%20Blue)%20%5Bprod.%20by%20Machiot%2C%20Marlykid%5D.mp3" type="audio/mpeg">
     </audio>
     
     <div id="invitation-card" class="card">
@@ -156,7 +153,7 @@
         <h2>Nguyễn Sỹ Sáng</h2>
         <p class="date">📅 Thời gian: 09:00 - Ngày 06/04/2025</p>
         <p class="date">📍 Địa điểm: Trường THPT Đô Lương 2</p>
-        <p><em>📜 TO: <span id="guest-name">Bạn</span></em></p>
+        <p><em>📜 TO: <span id="guest-name">Khách mời</span></em></p>
         <p><em>Mong bức ảnh thanh xuân của mình có sự góp mặt của bạn!</em></p>
         <button class="btn" onclick="openPrizeBox()">✅ Xác nhận tham gia</button>
     </div>
