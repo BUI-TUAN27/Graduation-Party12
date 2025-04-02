@@ -88,9 +88,11 @@
         }
     </style>
     <script>
+        // Get name from URL and decode it
         function getNameFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('NAME') || "Khách mời";  // Default to "Khách mời" if no name is provided
+            const name = urlParams.get('NAME') || "Khách mời";  // Default to "Khách mời" if no name is provided
+            return decodeURIComponent(name);  // Decode the name to ensure special characters are displayed correctly
         }
 
         function openInvitation() {
@@ -131,7 +133,7 @@
             document.getElementById('prize-box').style.display = 'none';
         }
 
-        // Set the guest name in the invitation dynamically
+        // Set the guest name in the invitation dynamically when the page loads
         window.onload = function() {
             const guestName = getNameFromURL();
             document.getElementById('guest-name').innerText = guestName;
