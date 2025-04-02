@@ -156,7 +156,7 @@
         <h2>Nguyễn Sỹ Sáng</h2>
         <p class="date">📅 Thời gian: 09:00 - Ngày 06/04/2025</p>
         <p class="date">📍 Địa điểm: Trường THPT Đô Lương 2</p>
-        <p><em>📜 TO: <span id="guest-name">Khách mời</span></em></p>
+        <p><em>📜 TO: <span id="guest-name">Bạn</span></em></p>
         <p><em>Mong bức ảnh thanh xuân của mình có sự góp mặt của bạn!</em></p>
         <button class="btn" onclick="openPrizeBox()">✅ Xác nhận tham gia</button>
     </div>
