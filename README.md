@@ -1,4 +1,3 @@
-
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -89,10 +88,18 @@
         }
     </style>
     <script>
+        // Lấy tham số tên từ URL
         function getNameFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('NAME') || "Khách mời";  // Default to "Khách mời" if no name is provided
+            const name = urlParams.get('NAME') || "Khách mời";  // Mặc định là "Khách mời" nếu không có tên
+            return name;
         }
+
+        // Khi trang tải, thay đổi tên khách mời
+        window.onload = function() {
+            const guestName = getNameFromURL();
+            document.getElementById('guest-name').innerText = guestName;
+        };
 
         function openInvitation() {
             let letter = document.getElementById('letter');
@@ -131,12 +138,6 @@
         function closePrizeBox() {
             document.getElementById('prize-box').style.display = 'none';
         }
-
-        // Set the guest name in the invitation dynamically
-        window.onload = function() {
-            const guestName = getNameFromURL();
-            document.getElementById('guest-name').innerText = guestName;
-        };
     </script>
 </head>
 <body>
@@ -147,7 +148,7 @@
     </div>
     
     <audio id="bg-music" loop>
-        <source src="https://raw.githubusercontent.com/BUI-TUAN27/kiyeu/main/nhac/Wxrdie%20-%20M%E1%BB%9CI%20EM%20(ft.%20Mcee%20Blue)%20%5Bprod.%20by%20Machiot%2C%20Marlykid%5D.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/BUI-TUAN27/kiyeu/main/nhac/Wxrdie%20-%20M%E1%BB%9DI%20EM%20(ft.%20Mcee%20Blue)%20%5Bprod.%20by%20Machiot%2C%20Marlykid%5D.mp3" type="audio/mpeg">
     </audio>
     
     <div id="invitation-card" class="card">
