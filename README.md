@@ -141,7 +141,7 @@
 </head>
 <body>
     <div class="letter-container">
-        <img id="letter" class="letter" src="https://upanh.tv/image/uxZC2y" alt="Thư mời tốt nghiệp">
+        <img id="letter" class="letter" alt="Thư mời tốt nghiệp">
         <br>
         <button id="open-button" class="btn" onclick="openInvitation()">📩 Mở Thư</button>
     </div>
