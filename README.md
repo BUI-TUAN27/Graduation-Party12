@@ -1,11 +1,11 @@
-
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graduation Party Invitation</title>
     <style>
-        @import url('https://upanh.tv/image/utTTas');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to right, #ff9a9e, #fad0c4);
@@ -47,9 +47,22 @@
             animation: fadeIn 1s ease-in-out;
             position: relative;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .prize-box {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4081;
         }
         .btn {
             display: inline-block;
@@ -62,37 +75,26 @@
             font-weight: bold;
             font-size: 22px;
             transition: 0.3s;
-            animation: glow 1.5s infinite alternate;
         }
         .btn:hover {
             background: #d63384;
             transform: scale(1.1);
         }
-        @keyframes glow {
-            from { box-shadow: 0 0 10px #ff4081; }
-            to { box-shadow: 0 0 20px #ff4081; }
-        }
-        .countdown {
-            font-size: 30px;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #ff4081;
+        .facebook-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
         }
     </style>
     <script>
-        function getGuestName() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('name') || 'Khách mời';
-        }
-
         function openInvitation() {
             let letter = document.getElementById('letter');
             let card = document.getElementById('invitation-card');
             let openButton = document.getElementById('open-button');
-            let guestNameElement = document.getElementById('guest-name');
             let audio = document.getElementById('bg-music');
             
-            guestNameElement.innerText = getGuestName();
             letter.classList.add('open');
             openButton.style.display = 'none';
             setTimeout(() => {
@@ -100,50 +102,68 @@
                 card.style.display = 'block';
                 audio.play();
             }, 500);
-
-            startCountdown();
+        }
+        
+        function openPrizeBox() {
+            document.getElementById('prize-box').style.display = 'block';
+            setTimeout(() => {
+                const prizes = ["Anh Tuấn", "Kẹo mút"];
+                const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
+                document.getElementById('prize-result').innerText = `Bạn nhận được: ${randomPrize}`;
+                
+                // Nếu phần thưởng là "Anh Tuấn", yêu cầu xác nhận
+                if (randomPrize === "Anh Tuấn") {
+                    document.getElementById('confirm-box').style.display = 'block';
+                }
+            }, 2000);
         }
 
-        function startCountdown() {
-            const countdownElement = document.getElementById('countdown');
-            const eventDate = new Date("April 6, 2025 10:00:00").getTime();
-            const interval = setInterval(() => {
-                const now = new Date().getTime();
-                const timeRemaining = eventDate - now;
-                if (timeRemaining <= 0) {
-                    clearInterval(interval);
-                    countdownElement.innerHTML = "🎉 Thời gian sự kiện đã đến!";
-                } else {
-                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-                    countdownElement.innerHTML = `Thời gian còn lại: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-                }
-            }, 1000);
+        function confirmPrize() {
+            const facebookLink = "https://www.facebook.com/tuan1207hh";
+            window.location.href = facebookLink;
+        }
+        
+        function closePrizeBox() {
+            document.getElementById('prize-box').style.display = 'none';
         }
     </script>
 </head>
 <body>
     <div class="letter-container">
-        <img id="letter" class="letter" src="https://upanh.tv/image/utTTas" alt="Thư mời tốt nghiệp">
+        <img id="letter" class="letter" src="tải xuống.jfif" alt="Thư mời tốt nghiệp">
         <br>
         <button id="open-button" class="btn" onclick="openInvitation()">📩 Mở Thư</button>
     </div>
     
     <audio id="bg-music" loop>
-        <source src="https://raw.githubusercontent.com/BUI-TUAN27/kiyeu/main/nhac/Wxrdie%20-%20M%E1%BB%9CI%20EM%20(ft.%20Mcee%20Blue)%20%5Bprod.%20by%20Machiot%2C%20Marlykid%5D.mp3" type="audio/mpeg">
+        <source src="/mnt/data/NHACTT.mp3" type="audio/mpeg">
     </audio>
     
     <div id="invitation-card" class="card">
         <h1>🎓 Graduation Party Invitation 🎓</h1>
-        <h2>Nguyễn Sĩ Sáng </h2>
-        <p><strong>TO:</strong> <span id="guest-name"></span></p>
+        <h2>Bùi Trọng Tuấn</h2>
         <p class="date">📅 Thời gian: 09:00 - Ngày 06/04/2025</p>
         <p class="date">📍 Địa điểm: Trường THPT Đô Lương 2</p>
         <p><em>Mong bức ảnh thanh xuân của mình có sự góp mặt của bạn!</em></p>
-        <div id="countdown" class="countdown"></div>
-        <a href="https://www.facebook.com/tuan1207hh" class="btn">✅ Xác nhận tham gia</a>
+        <button class="btn" onclick="openPrizeBox()">✅ Xác nhận tham gia</button>
     </div>
+    
+    <div id="prize-box" class="prize-box">
+        <h2>🎁 Phần thưởng của bạn 🎁</h2>
+        <p id="prize-result">Đang quay...</p>
+        <button class="btn" onclick="closePrizeBox()">Đóng</button>
+    </div>
+    
+    <!-- Confirmation box for Anh Tuấn -->
+    <div id="confirm-box" style="display:none; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">
+        <h3>🎉 Bạn nhận phần thưởng "Anh Tuấn"! 🎉</h3>
+        <p>Bạn có muốn nhận phần thưởng và đến trang Facebook không?</p>
+        <button class="btn" onclick="confirmPrize()">✅ Xác nhận</button>
+        <button class="btn" onclick="closePrizeBox()">❌ Hủy</button>
+    </div>
+
+    <a href="https://www.facebook.com/tuan1207hh">
+        <img class="facebook-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+    </a>
 </body>
 </html>
