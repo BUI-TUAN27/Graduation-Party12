@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graduation Party Invitation</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://upanh.tv/image/utTTas');
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to right, #ff9a9e, #fad0c4);
@@ -126,7 +126,7 @@
 </head>
 <body>
     <div class="letter-container">
-        <img id="letter" class="letter" src="https://i.imgur.com/Q9vSDru.jpeg" alt="Thư mời tốt nghiệp">
+        <img id="letter" class="letter" src="https://upanh.tv/image/utTTas" alt="Thư mời tốt nghiệp">
         <br>
         <button id="open-button" class="btn" onclick="openInvitation()">📩 Mở Thư</button>
     </div>
@@ -137,7 +137,7 @@
     
     <div id="invitation-card" class="card">
         <h1>🎓 Graduation Party Invitation 🎓</h1>
-        <h2>Bùi Trọng Tuấn</h2>
+        <h2>Nguyễn Sĩ Sáng </h2>
         <p><strong>TO:</strong> <span id="guest-name"></span></p>
         <p class="date">📅 Thời gian: 09:00 - Ngày 06/04/2025</p>
         <p class="date">📍 Địa điểm: Trường THPT Đô Lương 2</p>
