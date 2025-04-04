@@ -116,19 +116,19 @@
         function openPrizeBox() {
             document.getElementById('prize-box').style.display = 'block';
             setTimeout(() => {
-                const prizes = ["kẹo mút", "kẹo mút", "kẹo mút.", "kẹo mút."];;
+                const prizes = ["kẹo mút", "kẹo mút", "Hôn cái", "thơm cái"];;
                 const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
                 document.getElementById('prize-result').innerText = `Bạn nhận được: ${randomPrize}`;
                 
                 // Nếu phần thưởng là "Anh Tuấn", yêu cầu xác nhận
-                if (randomPrize === "kẹo mút.") {
+                if (randomPrize === "mmmmmmm") {
                     document.getElementById('confirm-box').style.display = 'block';
                 }
             }, 2000);
         }
 
         function confirmPrize() {
-            const facebookLink = "https://www.facebook.com/tuan1207hh";
+            const facebookLink = "";
             window.location.href = facebookLink;
         }
         
@@ -172,7 +172,7 @@
         <button class="btn" onclick="closePrizeBox()">❌ Hủy</button>
     </div>
 
-    <a href="https://www.facebook.com/tuan1207hh">
+    <a href="">
         <img class="facebook-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
     </a>
 </body>
