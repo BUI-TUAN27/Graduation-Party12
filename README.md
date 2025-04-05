@@ -116,7 +116,7 @@
         function openPrizeBox() {
             document.getElementById('prize-box').style.display = 'block';
             setTimeout(() => {
-                const prizes = ["Hôn cái", "thơm cái"];;
+                const prizes = ["hông có ròi", "kẹo mút"];;
                 const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
                 document.getElementById('prize-result').innerText = `Bạn nhận được: ${randomPrize}`;
                 
